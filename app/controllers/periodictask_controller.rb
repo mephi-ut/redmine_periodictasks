@@ -20,6 +20,7 @@ class PeriodictaskController < ApplicationController
   end
 
   def create
+    params.permit!
     @periodictask = Periodictask.new(:project=>@project, :author_id=>User.current.id)
     params[:periodictask][:project_id] = @project[:id]
     @periodictask.attributes = params[:periodictask]
@@ -36,6 +37,7 @@ class PeriodictaskController < ApplicationController
   end
 
   def update
+    params.permit!
     @periodictask = Periodictask.find(params[:id])
     params[:periodictask][:project_id] = @project[:id]
     if @periodictask.update_attributes(params[:periodictask])
@@ -49,6 +51,7 @@ class PeriodictaskController < ApplicationController
   end
 
   def destroy
+      params.permit!
       @task = Periodictask.find(params[:id])
       @task.destroy
       redirect_to :controller => 'periodictask', :action => 'index', :project_id=>params[:project_id]
