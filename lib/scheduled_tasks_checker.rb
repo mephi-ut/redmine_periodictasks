@@ -15,12 +15,14 @@ class ScheduledTasksChecker
                         :description=>task.description
       );
 
+      issue.subject.gsub!('**DATE**', Time.now.strftime("%d"))
       issue.subject.gsub!('**WEEK**', Time.now.strftime("%W"))
       issue.subject.gsub!('**MONTH**', Time.now.strftime("%m"))
       issue.subject.gsub!('**MONTHNAME**', I18n.localize(Time.now, :format => "%B"))
       issue.subject.gsub!('**YEAR**', Time.now.strftime("%Y"))
       issue.subject.gsub!('**PREVIOUS_MONTHNAME**', I18n.localize(Time.now - 2592000, :format => "%B"))
 
+      issue.description.gsub!('**DATE**', Time.now.strftime("%d"))
       issue.description.gsub!('**WEEK**', Time.now.strftime("%W"))
       issue.description.gsub!('**MONTH**', Time.now.strftime("%m"))
       issue.description.gsub!('**MONTHNAME**', I18n.localize(Time.now, :format => "%B"))
