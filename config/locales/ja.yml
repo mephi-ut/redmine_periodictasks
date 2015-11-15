@@ -1,0 +1,37 @@
+# Japanase strings go here for Rails i18n
+ja:
+  field_interval_number: 間隔定期チケット
+  field_interval_unit: 単位
+  field_tracker: トラッカー
+  field_category: カテゴリー
+  label_assigned_to_user: 担当者
+  no_members_in_project: このプロジェクトのメンバーではありません
+  no_categories_in_project: このプロジェクトのカテゴリではありません
+  label_subject: 題名
+  label_next_run_date: 次回実行日時 (yyyy-mm-dd hh:mm:ss)
+  label_edit_periodic_task: 編集
+  label_new_periodic_task: 新規
+  label_no_members_in_project: このプロジェクトのメンバーではありません
+  label_no_categories_in_project: このプロジェクトのカテゴリではありません
+  label_periodic_tasks: 定期チケット
+  label_create_periodic_task: 作成
+  label_save_periodic_task: 保存
+  label_scheduled_tasks: 定期チケットの一覧
+  label_no_project: プロジェクトIDがセットされていません
+  label_remove_periodic_task: 削除
+  label_interval: 間隔
+  label_set_start_date: 開始日を設定する
+  label_due_date: 期日を設定する
+  label_description: 説明
+  label_issue_category: カテゴリ
+  label_unit_day: 日
+  label_unit_week: 週
+  label_unit_month: 月
+  label_unit_year: 年
+  flash_task_created: 作成完了
+  flash_task_saved: 更新完了
+  subject_variables: 代入可能な変数 **DATE** (01-31), **WEEK** (01-53), **MONTH** (01-12), **MONTHNAME** (January - December), **YEAR** (YYYY)
+  author_user_id: 作成者
+  label_periodictask: 定期チケット
+  project_module_periodictask: 定期チケット
+  permission_periodictask: 定期チケットの管理
