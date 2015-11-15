@@ -30,3 +30,6 @@ ru:
   flash_task_created: Периодическа задача создана
   flash_task_saved: Периодическа задача сохранена
   subject_variables: Возможные переменные **WEEK** (01-53), **MONTH** (01-12), **MONTHNAME** (января - декабря), **PREVIOUS_MONTHNAME** передыдущий месяц, **YEAR** (YYYY)
+  label_periodictask: Periodic
+  project_module_periodictask: Periodic
+  permission_periodictask: Manage Periodic Tasks

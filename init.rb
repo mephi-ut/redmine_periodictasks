@@ -12,5 +12,5 @@ Redmine::Plugin.register :periodictask do
     permission :periodictask, {:periodictask => [:index, :edit]}
   end
 
-  menu :project_menu, :periodictask, { :controller => 'periodictask', :action => 'index' }, :caption => 'Periodic Task', :after => :settings, :param => :project_id
+  menu :project_menu, :periodictask, { :controller => 'periodictask', :action => 'index' }, :caption => :label_periodictask, :after => :settings, :param => :project_id
 end
