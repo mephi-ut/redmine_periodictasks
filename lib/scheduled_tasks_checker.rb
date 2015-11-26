@@ -16,18 +16,44 @@ class ScheduledTasksChecker
       );
 
       issue.subject.gsub!('**DATE**', Time.now.strftime("%d"))
+      issue.subject.gsub!('**PREV_DATE**', Time.now.yesterday.strftime("%d"))
+      issue.subject.gsub!('**NEXT_DATE**', Time.now.tomorrow.strftime("%d"))
+
       issue.subject.gsub!('**WEEK**', Time.now.strftime("%W"))
+      issue.subject.gsub!('**PREV_WEEK**', Time.now.prev_week.strftime("%W"))
+      issue.subject.gsub!('**NEXT_WEEK**', Time.now.next_week.strftime("%W"))
+
       issue.subject.gsub!('**MONTH**', Time.now.strftime("%m"))
+      issue.subject.gsub!('**PREV_MONTH**', Time.now.prev_month.strftime("%m"))
+      issue.subject.gsub!('**NEXT_MONTH**', Time.now.next_month.strftime("%m"))
+
       issue.subject.gsub!('**MONTHNAME**', I18n.localize(Time.now, :format => "%B"))
+      issue.subject.gsub!('**PREV_MONTHNAME**', I18n.localize(Time.now.prev_month, :format => "%B"))
+      issue.subject.gsub!('**NEXT_MONTHNAME**', I18n.localize(Time.now.next_month, :format => "%B"))
+
       issue.subject.gsub!('**YEAR**', Time.now.strftime("%Y"))
-      issue.subject.gsub!('**PREVIOUS_MONTHNAME**', I18n.localize(Time.now - 2592000, :format => "%B"))
+      issue.subject.gsub!('**NEXT_YEAR**', Time.now.next_year.strftime("%Y"))
+      issue.subject.gsub!('**PREV_YEAR**', Time.now.prev_year.strftime("%Y"))
 
       issue.description.gsub!('**DATE**', Time.now.strftime("%d"))
+      issue.description.gsub!('**PREV_DATE**', Time.now.yesterday.strftime("%d"))
+      issue.description.gsub!('**NEXT_DATE**', Time.now.tomorrow.strftime("%d"))
+
       issue.description.gsub!('**WEEK**', Time.now.strftime("%W"))
+      issue.description.gsub!('**PREV_WEEK**', Time.now.prev_week.strftime("%W"))
+      issue.description.gsub!('**NEXT_WEEK**', Time.now.next_week.strftime("%W"))
+
       issue.description.gsub!('**MONTH**', Time.now.strftime("%m"))
-      issue.description.gsub!('**MONTHNAME**', I18n.localize(Time.now, :format => "%B"))
+      issue.description.gsub!('**PREV_MONTH**', Time.now.prev_month.strftime("%m"))
+      issue.description.gsub!('**NEXT_MONTH**', Time.now.next_month.strftime("%m"))
+
       issue.description.gsub!('**YEAR**', Time.now.strftime("%Y"))
-      issue.description.gsub!('**PREVIOUS_MONTHNAME**', I18n.localize(Time.now - 2592000, :format => "%B"))
+      issue.description.gsub!('**PREV_YEAR**', Time.now.prev_year.strftime("%Y"))
+      issue.description.gsub!('**NEXT_YEAR**', Time.now.next_year.strftime("%Y"))
+
+      issue.description.gsub!('**MONTHNAME**', I18n.localize(Time.now, :format => "%B"))
+      issue.description.gsub!('**PREV_MONTHNAME**', I18n.localize(Time.now.prev_month, :format => "%B"))
+      issue.description.gsub!('**NEXT_MONTHNAME**', I18n.localize(Time.now.next_month, :format => "%B"))
 
       issue.start_date ||= Date.today if task.set_start_date?
 

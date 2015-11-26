@@ -30,7 +30,7 @@ ja:
   label_unit_year: 年
   flash_task_created: 作成完了
   flash_task_saved: 更新完了
-  subject_variables: 代入可能な変数 **DATE** (01-31), **WEEK** (01-53), **MONTH** (01-12), **MONTHNAME** (January - December), **YEAR** (YYYY)
+  subject_variables: 代入可能な変数 **[NEXT|PREV]_DATE** (01-31), **[NEXT|PREV]_WEEK** (01-53), **[NEXT|PREV]_MONTH** (01-12), **[NEXT|PREV]_MONTHNAME** (January - December), **[NEXT|PREV]_YEAR** (YYYY)
   author_user_id: 作成者
   label_periodictask: 定期チケット
   project_module_periodictask: 定期チケット

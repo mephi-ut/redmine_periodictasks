@@ -30,7 +30,7 @@ de:
   label_unit_year: Jahr(e)
   flash_task_created: Aufgabe wurde angelegt
   flash_task_saved: Aufgabe wurde gespeichert
-  subject_variables: Mögliche Variablen sind **DATE** (01-31), **WEEK** (01-53), **MONTH** (01-12), **MONTHNAME** (Januar - Dezember), **YEAR** (YYYY)
+  subject_variables: Mögliche Variablen sind **[NEXT|PREV]_DATE** (01-31), **[NEXT|PREV]_WEEK** (01-53), **[NEXT|PREV]_MONTH** (01-12), **[NEXT|PREV]_MONTHNAME** (January - December), **[NEXT|PREV]_YEAR** (YYYY)
   label_periodictask: Periodic
   project_module_periodictask: Periodic
   permission_periodictask: Manage Periodic Tasks
