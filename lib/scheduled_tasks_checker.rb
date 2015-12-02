@@ -15,45 +15,37 @@ class ScheduledTasksChecker
                         :description=>task.description
       );
 
-      issue.subject.gsub!('**DATE**', Time.now.strftime("%d"))
-      issue.subject.gsub!('**PREV_DATE**', Time.now.yesterday.strftime("%d"))
-      issue.subject.gsub!('**NEXT_DATE**', Time.now.tomorrow.strftime("%d"))
+      issue.subject.gsub!('**DATE**',               I18n.localize(Time.now,                      :format => "%-d"))
+      issue.subject.gsub!('**PREV_DATE**',          I18n.localize(Time.now.yesterday,            :format => "%-d"))
+      issue.subject.gsub!('**NEXT_DATE**',          I18n.localize(Time.now.tomorrow,             :format => "%-d"))
+      issue.subject.gsub!('**WEEK**',               I18n.localize(Time.now,                      :format => "%-W"))
+      issue.subject.gsub!('**PREV_WEEK**',          I18n.localize(Time.now.prev_week,            :format => "%-W"))
+      issue.subject.gsub!('**NEXT_WEEK**',          I18n.localize(Time.now.next_week,            :format => "%-W"))
+      issue.subject.gsub!('**MONTH**',              I18n.localize(Time.now,                      :format => "%-m"))
+      issue.subject.gsub!('**PREV_MONTH**',         I18n.localize(Time.now.prev_month,           :format => "%-m"))
+      issue.subject.gsub!('**NEXT_MONTH**',         I18n.localize(Time.now.next_month,           :format => "%-m"))
+      issue.subject.gsub!('**MONTHNAME**',          I18n.localize(Time.now,                      :format => "%-B"))
+      issue.subject.gsub!('**PREV_MONTHNAME**',     I18n.localize(Time.now.prev_month,           :format => "%-B"))
+      issue.subject.gsub!('**NEXT_MONTHNAME**',     I18n.localize(Time.now.next_month,           :format => "%-B"))
+      issue.subject.gsub!('**YEAR**',               I18n.localize(Time.now,                      :format => "%-Y"))
+      issue.subject.gsub!('**NEXT_YEAR**',          I18n.localize(Time.now.next_year,            :format => "%-Y"))
+      issue.subject.gsub!('**PREV_YEAR**',          I18n.localize(Time.now.prev_year,            :format => "%-Y"))
 
-      issue.subject.gsub!('**WEEK**', Time.now.strftime("%W"))
-      issue.subject.gsub!('**PREV_WEEK**', Time.now.prev_week.strftime("%W"))
-      issue.subject.gsub!('**NEXT_WEEK**', Time.now.next_week.strftime("%W"))
-
-      issue.subject.gsub!('**MONTH**', Time.now.strftime("%m"))
-      issue.subject.gsub!('**PREV_MONTH**', Time.now.prev_month.strftime("%m"))
-      issue.subject.gsub!('**NEXT_MONTH**', Time.now.next_month.strftime("%m"))
-
-      issue.subject.gsub!('**MONTHNAME**', I18n.localize(Time.now, :format => "%B"))
-      issue.subject.gsub!('**PREV_MONTHNAME**', I18n.localize(Time.now.prev_month, :format => "%B"))
-      issue.subject.gsub!('**NEXT_MONTHNAME**', I18n.localize(Time.now.next_month, :format => "%B"))
-
-      issue.subject.gsub!('**YEAR**', Time.now.strftime("%Y"))
-      issue.subject.gsub!('**NEXT_YEAR**', Time.now.next_year.strftime("%Y"))
-      issue.subject.gsub!('**PREV_YEAR**', Time.now.prev_year.strftime("%Y"))
-
-      issue.description.gsub!('**DATE**', Time.now.strftime("%d"))
-      issue.description.gsub!('**PREV_DATE**', Time.now.yesterday.strftime("%d"))
-      issue.description.gsub!('**NEXT_DATE**', Time.now.tomorrow.strftime("%d"))
-
-      issue.description.gsub!('**WEEK**', Time.now.strftime("%W"))
-      issue.description.gsub!('**PREV_WEEK**', Time.now.prev_week.strftime("%W"))
-      issue.description.gsub!('**NEXT_WEEK**', Time.now.next_week.strftime("%W"))
-
-      issue.description.gsub!('**MONTH**', Time.now.strftime("%m"))
-      issue.description.gsub!('**PREV_MONTH**', Time.now.prev_month.strftime("%m"))
-      issue.description.gsub!('**NEXT_MONTH**', Time.now.next_month.strftime("%m"))
-
-      issue.description.gsub!('**YEAR**', Time.now.strftime("%Y"))
-      issue.description.gsub!('**PREV_YEAR**', Time.now.prev_year.strftime("%Y"))
-      issue.description.gsub!('**NEXT_YEAR**', Time.now.next_year.strftime("%Y"))
-
-      issue.description.gsub!('**MONTHNAME**', I18n.localize(Time.now, :format => "%B"))
-      issue.description.gsub!('**PREV_MONTHNAME**', I18n.localize(Time.now.prev_month, :format => "%B"))
-      issue.description.gsub!('**NEXT_MONTHNAME**', I18n.localize(Time.now.next_month, :format => "%B"))
+      issue.description.gsub!('**DATE**',           I18n.localize(Time.now,                      :format => "%-d"))
+      issue.description.gsub!('**PREV_DATE**',      I18n.localize(Time.now.yesterday,            :format => "%-d"))
+      issue.description.gsub!('**NEXT_DATE**',      I18n.localize(Time.now.tomorrow,             :format => "%-d"))
+      issue.description.gsub!('**WEEK**',           I18n.localize(Time.now,                      :format => "%-W"))
+      issue.description.gsub!('**PREV_WEEK**',      I18n.localize(Time.now.prev_week,            :format => "%-W"))
+      issue.description.gsub!('**NEXT_WEEK**',      I18n.localize(Time.now.next_week,            :format => "%-W"))
+      issue.description.gsub!('**MONTH**',          I18n.localize(Time.now,                      :format => "%-m"))
+      issue.description.gsub!('**PREV_MONTH**',     I18n.localize(Time.now.prev_month,           :format => "%-m"))
+      issue.description.gsub!('**NEXT_MONTH**',     I18n.localize(Time.now.next_month,           :format => "%-m"))
+      issue.description.gsub!('**MONTHNAME**',      I18n.localize(Time.now,                      :format => "%-B"))
+      issue.description.gsub!('**PREV_MONTHNAME**', I18n.localize(Time.now.prev_month,           :format => "%-B"))
+      issue.description.gsub!('**NEXT_MONTHNAME**', I18n.localize(Time.now.next_month,           :format => "%-B"))
+      issue.description.gsub!('**YEAR**',           I18n.localize(Time.now,                      :format => "%-Y"))
+      issue.description.gsub!('**NEXT_YEAR**',      I18n.localize(Time.now.next_year,            :format => "%-Y"))
+      issue.description.gsub!('**PREV_YEAR**',      I18n.localize(Time.now.prev_year,            :format => "%-Y"))
 
       issue.start_date ||= Date.today if task.set_start_date?
 
